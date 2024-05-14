@@ -35,7 +35,9 @@ This function uses a 10kpc x 10kpc x 0.8 kpc extinction map and is centered at E
 The advantages of the larger maps is that more stars are contained within them. The disadvantage is that precision is reduced and error is increased.
 
 
-## POSSIBLE ERRORS:
+# POSSIBLE ERRORS:
 
 Apart from errors given by in-built functions of the package, custom errors that can be received are:
-OUT_OF_BOUNDS_ERROR: the position of the star is outside of the extinction map used.
+## OUT_OF_BOUNDS_ERROR:
+The position of the star (or of the observer) is outside of the extinction map used. The only solution to this problem is finding a new map that contains both.
+
