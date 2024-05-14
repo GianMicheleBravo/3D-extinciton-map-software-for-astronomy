@@ -16,9 +16,12 @@ To get the extinction of a star or other object, the program requires, at first,
 
 From the astropy coordinates object coords, the formatting to get the extinciton is as follows:
 ## out = extinction( coords, 3Dmap=map10kpcX10kpcX800pc, output='full', steps=100, observer=(0,0,0) )
-3Dmap=map10kpcX10kpcX800pc is the map to be used when calculating extinciton. The standard is to use 
-output='full' denotes for what observational bands the output will be given. So far, extinction in four bands is avaliable: visual V ('A_V'), gaia G band 'A_G', gaia Bp band 'A_Bp', and gaia Rp band 'A_Rp'. Also given is the reddening 'E_(Bp_Rp)' = A_Bp - A_Rp . If the standard string 'full' is passed, all of these are returned as a python dictionary. 
+3Dmap=map10kpcX10kpcX800pc is the map to be used when calculating extinciton. The standard is to use a 10kpc x 10kpc x 0.8kpc map.
+
+output='full' denotes for what observational bands the output will be given. So far, extinction in four bands is avaliable: visual V ('A_V'), gaia G band 'A_G', gaia Bp band 'A_Bp', and gaia Rp band 'A_Rp'. Also given is the reddening 'E_(Bp_Rp)' = A_Bp - A_Rp . If the standard string 'full' is passed, all of these are returned as a python dictionary.
+
 steps=100 is the number of integration steps
+
 observer=(0,0,0) is the coordinates of the observer from which photometry of a star was taken. For many currently available extinction maps and astrophysics research, the maps are centered at Earth, the same place where the telescopes are situated.
 
 To help simplify the project, the following streamlined function have been defined:
