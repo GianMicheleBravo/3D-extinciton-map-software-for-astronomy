@@ -24,7 +24,7 @@ steps=100 is the number of integration steps
 
 observer=(0,0,0) is the coordinates of the observer from which photometry of a star was taken. For many currently available extinction maps and astrophysics research, the maps are centered at Earth, the same place where the telescopes are situated.
 
-To help simplify the project, the following streamlined function have been defined:
+To help simplify the project, the following streamlined functions have been defined:
 ## extinctionSmallMap( coords, output=full, steps=100 )
 This function uses a 3kpc x 3kpc x 0.8 kpc extinction map and is centered at Earth, where it is assumed that the observer also is. This function is equal to **extinction(coords,smallMap)**.
 ## extinctionMediumMap( coords, output=full, steps=100 )
