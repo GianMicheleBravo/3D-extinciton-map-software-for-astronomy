@@ -28,7 +28,7 @@ Start by having the extinction3D.py file and an extinction map in the same direc
 
 ## Exectution
 From the astropy coordinates object coords, the formatting to get the extinciton is as follows:
-## out = extinction( coords, 3Dmap, output='full', steps=100, observer=(0,0,0) )
+## extinction( coords, 3Dmap, output='full', steps=100, observer=(0,0,0) )
 3Dmap=map10kpcX10kpcX800pc is the map to be used when calculating extinciton. The standard is to use a 10kpc x 10kpc x 0.8kpc map.
 
 output='full' denotes for what observational bands the output will be given. So far, extinction in four bands is avaliable: visual V ('A_V'), gaia G band 'A_G', gaia Bp band 'A_Bp', and gaia Rp band 'A_Rp'. Also given is the reddening 'E(Bp_Rp)' = A_Bp - A_Rp . If the standard string 'full' is passed, all of these are returned as a python dictionary.
