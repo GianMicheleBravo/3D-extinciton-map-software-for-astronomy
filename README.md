@@ -12,7 +12,7 @@ catalogues. Astronomy Astrophysics, 664, 05 2022.
 The maps are in the unit of magnitudes/parsec. To get the extinciton of a star, it is necessary to integrate over the line of sight from the star to the observer. Further updates may allow for customisation with your own maps.
 
 # USAGE:
-To get the extinction of a star or other object, the program requires, at first, the 3-Dimensional positon of the star. This is to be given by you in the form of astropy coordinates. Note that three values are required to place the star in 3-Dimensional space. Example of what would work here is right ascension, declination and parallax.
+To get the extinction of a star or other object, start by having this python file and an extinction map in the same directory as your code. If you use one of the pre-determined maps, they will be loeaded automatically. You will also need a SkyCoord object containing the 3-Dimensional position of your object. Note that three values are required to place the star in 3-Dimensional space. Example of what would work here is right ascension, declination and distance.
 
 From the astropy coordinates object coords, the formatting to get the extinciton is as follows:
 ## out = extinction( coords, 3Dmap, output='full', steps=100, observer=(0,0,0) )
