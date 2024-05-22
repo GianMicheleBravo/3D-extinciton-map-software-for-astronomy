@@ -29,6 +29,8 @@ Start by having the extinction3D.py file and an extinction map in the same direc
 ## Exectution
 From the astropy coordinates object coords, the formatting to get the extinciton is as follows:
 ## extinction( coords, 3Dmap, output='full', steps=100, observer=(0,0,0) )
+coords is a SkyCoord class object.
+
 3Dmap is the map to be used when calculating extinciton.
 
 output='full' denotes for what observational bands the output will be given. So far, extinction in four bands is avaliable: visual V ('A_V'), gaia G band 'A_G', gaia Bp band 'A_Bp', and gaia Rp band 'A_Rp'. Also given is the reddening 'E(Bp_Rp)' = A_Bp - A_Rp . If the standard string 'full' is passed, all of these are returned as a python dictionary.
@@ -49,10 +51,3 @@ The advantages of the larger maps is that more stars are contained within them. 
 
 ## info()
 Returns the current status of the script, showing which maps are loaded.
-
-# POSSIBLE ERRORS:
-
-Apart from errors given by in-built functions of the package, custom errors that can be received are:
-## OUT_OF_BOUNDS_ERROR:
-The position of the star (or of the observer) is outside of the extinction map used. The only solution to this problem is finding a new map that contains both.
-
