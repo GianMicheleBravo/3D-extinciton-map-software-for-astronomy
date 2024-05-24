@@ -1,7 +1,6 @@
 # 3D-extinciton-map-software-for-astronomy
-3-Dimensional map of space dust in the galaxy can be used to get the total darkening this dust causes with unprecedented accuracy. This code caclulates the total extinction and magnitude.
+3-Dimensional maps of space dust in the galaxy can be used to get the extinction and reddening of stars and other objects with unprecedented accuracy. This code caclulates it.
 
-14/05/2024.
 The software is initially meant for using the public 3-Dimensional dust maps available at 
 https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/664/A174#/article
 
