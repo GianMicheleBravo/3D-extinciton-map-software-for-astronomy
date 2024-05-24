@@ -33,7 +33,7 @@ coords is a SkyCoord class object.
 
 3Dmap is the map to be used when calculating extinciton.
 
-output='full' denotes for what observational bands the output will be given. So far, extinction in four bands is avaliable: visual V ('A_V'), gaia G band 'A_G', gaia Bp band 'A_Bp', and gaia Rp band 'A_Rp'. Also given is the reddening 'E(Bp_Rp)' = A_Bp - A_Rp . If the standard string 'full' is passed, all of these are returned as a python dictionary.
+output='full' denotes for what observational bands the output will be given. So far, extinction in four bands is avaliable: visual V 'A_V', gaia G band 'A_G', gaia Bp band 'A_Bp', and gaia Rp band 'A_Rp'. Also given is the reddening 'E(Bp_Rp)' = A_Bp - A_Rp . If the standard string 'full' is passed, all of these are returned as a python dictionary.
 
 steps=1000 is the number of integration steps
 
