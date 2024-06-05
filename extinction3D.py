@@ -119,32 +119,45 @@ def extinction( coords, map3D, output='full', steps=1000, observer=np.array((0,0
 
 #loading the small map
 try:
-	smallMap=map3D(np.linspace(-1500,1500,601),np.linspace(-1500,1500,601),np.linspace(-400,400,161),'smallMap.fits',frame='galactic_cartesian')	
-	def extinctionSmallMap( coords, output='full', steps=1000 ):
-		return extinction(coords,smallMap,output,steps)
+	smallMap=map3D(np.linspace(-1500,1500,601),np.linspace(-1500,1500,601),np.linspace(-400,400,161),'explore_cube_density_values_010pc_v2.fits',frame='galactic_cartesian')	
 	small=True
 except:
-	small=False
-
+	try:
+		smallMap=map3D(np.linspace(-1500,1500,601),np.linspace(-1500,1500,601),np.linspace(-400,400,161),'smallMap.fits',frame='galactic_cartesian')	
+		small=True
+	except:	
+		small=False
+if small:
+	def extinctionSmallMap( coords, output='full', steps=1000 ):
+		return extinction(coords,smallMap,output,steps)
 
 #loading the medium map
 try:
-	mediumMap=map3D(np.linspace(-3000,3000,601),np.linspace(-3000,3000,601),np.linspace(-400,400,81),'mediumMap.fits',frame='galactic_cartesian')	
-	def extinctionMediumMap( coords, output='full', steps=1000 ):
-		return extinction(coords,mediumMap,output,steps)
+	mediumMap=map3D(np.linspace(-3000,3000,601),np.linspace(-3000,3000,601),np.linspace(-400,400,81),'explore_cube_density_values_025pc_v2.fits',frame='galactic_cartesian')	
 	medium=True
 except:
-	medium=False
-
+	try:
+		mediumMap=map3D(np.linspace(-3000,3000,601),np.linspace(-3000,3000,601),np.linspace(-400,400,81),'mediumMap.fits',frame='galactic_cartesian')	
+		medium=True
+	except:
+		medium=False
+if medium:
+	def extinctionMediumMap( coords, output='full', steps=1000 ):
+		return extinction(coords,mediumMap,output,steps)
 
 #loading the large map
 try:
-	largeMap=map3D(np.linspace(-5000,5000,501),np.linspace(-5000,5000,501),np.linspace(-400,400,41),'largeMap.fits',frame='galactic_cartesian')	
-	def extinctionLargeMap( coords, output='full', steps=1000 ):
-		return extinction(coords,largeMap,output,steps)
+	largeMap=map3D(np.linspace(-5000,5000,501),np.linspace(-5000,5000,501),np.linspace(-400,400,41),'explore_cube_density_values_050pc_v2.fits',frame='galactic_cartesian')	
 	large=True
 except:
-	large=False
+	try:
+		largeMap=map3D(np.linspace(-5000,5000,501),np.linspace(-5000,5000,501),np.linspace(-400,400,41),'largeMap.fits',frame='galactic_cartesian')	
+		large=True	
+	except:
+		large=False
+if large:
+	def extinctionLargeMap( coords, output='full', steps=1000 ):
+		return extinction(coords,largeMap,output,steps)
 
 
 ###HELP FUNCTIONS####
@@ -164,7 +177,7 @@ def info():
 	else:
 		out+='\nLarge map not found\n'
 	
-	out+='Credit for these maps: .L. Vergely, Rosine Lallement, and N.J.L. Cox. Three-dimensional extinction maps: Inverting inter-calibrated extinction catalogues. Astronomy Astrophysics, 664, 05 2022.'
+	out+='\nCredit for these maps: .L. Vergely, Rosine Lallement, and N.J.L. Cox. Three-dimensional extinction maps: Inverting inter-calibrated extinction catalogues. Astronomy Astrophysics, 664, 05 2022.'
 	out+='\nYou can also upload and use your own 3D map by defining a map3D class object. Note that you need a .fits file containing the map for this to happen.\n'
 	print(out)
 def status():
