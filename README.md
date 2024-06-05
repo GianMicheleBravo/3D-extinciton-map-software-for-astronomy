@@ -12,15 +12,18 @@ The maps are in the unit of magnitudes/parsec. To get the extinciton of a star, 
 
 # USAGE:
 ## Dowload the extinction map
+Go to 
 https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=J/A%2bA/664/A174/list
 Submit the query.
-Dowload your desired map(s) and rename them appropriately:
+Dowload your desired map(s). If you wish, you can rename them accordingly as following to make it easier to understand what they are.
 
 **smallMap.fits**: the file called explore_cube_density_values_010pc_v2.fits
 
 **mediumMap.fits**: the file called explore_cube_density_values_025pc_v2.fits
 
 **largeMap.fits**: the file called explore_cube_density_values_050pc_v2.fits
+
+Note that the small map also is the one of with the _largest file size_. This is due to the fact that while the small map describes a smaller region of space, it has a higher resolutions, leading to a larger total nunber of pixels.
 
 ## Setup
 Start by having the extinction3D.py file and an extinction map in the same directory as your code. If you use one of the pre-determined maps, the maps will will be loeaded automatically. You will also need a SkyCoord object containing the 3-Dimensional position of your object. Note that three values are required to place the star in 3-Dimensional space. Example of what would work here is right ascension, declination and distance.
