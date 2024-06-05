@@ -23,7 +23,7 @@ Dowload your desired map(s). If you wish, you can rename them accordingly as fol
 
 **largeMap.fits**: the file called explore_cube_density_values_050pc_v2.fits
 
-Note that the small map also is the one of with the _largest file size_. This is due to the fact that while the small map describes a smaller region of space, it has a higher resolutions, leading to a larger total nunber of pixels.
+Note that the small map is also the one of with the _largest file size_. This is due to the fact that while the small map describes a smaller region of space, it has a higher resolutions, leading to a larger total nunber of pixels.
 
 ## Setup
 Start by having the extinction3D.py file and an extinction map in the same directory as your code. If you use one of the pre-determined maps, the maps will will be loeaded automatically. You will also need a SkyCoord object containing the 3-Dimensional position of your object. Note that three values are required to place the star in 3-Dimensional space. Example of what would work here is right ascension, declination and distance.
