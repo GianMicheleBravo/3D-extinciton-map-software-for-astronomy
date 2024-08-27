@@ -85,7 +85,7 @@ class map3D:
 		
 		return out
 
-#second attempt gives the extinction for a given star
+#gives the extinction for a given star
 def extinction( coords, map3D, output='full', steps=1000, observer=np.array((0,0,0)) ):
 	frame=map3D.frame
 	indexFunction=map3D.indexFunction
@@ -95,6 +95,7 @@ def extinction( coords, map3D, output='full', steps=1000, observer=np.array((0,0
 	path=np.linspace(coordsInCorrectFrame,observer,steps).T #a path from the end to the start
 
 	distance=np.sqrt(sum((coordsInCorrectFrame-observer)**2))	
+
 	try:
 		indexes=indexFunction(path) 
 		values=extinctionMap[indexes]
@@ -107,7 +108,7 @@ def extinction( coords, map3D, output='full', steps=1000, observer=np.array((0,0
 	
 	totalG=totalV*0.835
 	totalBp=totalV*1.139
-	totalRp=totalV*0.650
+	totalRp=totalV*0.650		
 	
 	out={'A_V':totalV,'A_G':totalG,'A_Bp':totalBp,'A_Rp':totalRp,'E(Bp_Rp)':totalBp-totalRp}
 	if output=='full':
@@ -115,6 +116,24 @@ def extinction( coords, map3D, output='full', steps=1000, observer=np.array((0,0
 	else:
 		return out[output]
 
+#from the extinction in the V band, returns the extinction for given wavelength
+def extinctionSpectroscopic( A_V , lambd, unit='meters' , fluxOutput = False):
+	out=np.array(lambd)
+	if unit in ['Å','A','Ångström','Angstrom','angstrom']:
+		out = out * 1e-10
+	elif unit in ['nm','nanometers','nanometer']:
+		out = out * 1e-9	
+	
+	waveNumberBase=1/551e-9
+	
+	out = 1 / out
+	out =  out / waveNumberBase
+	
+	if fluxOutput:
+		return 10 ** (- out / 2.5 )
+	return out * A_V
+	
+	
 ####LOADING MAPS AND CUSTOM FUNCTIONS####
 
 #loading the small map
@@ -180,10 +199,8 @@ def info():
 	out+='\nCredit for these maps: .L. Vergely, Rosine Lallement, and N.J.L. Cox. Three-dimensional extinction maps: Inverting inter-calibrated extinction catalogues. Astronomy Astrophysics, 664, 05 2022.'
 	out+='\nYou can also upload and use your own 3D map by defining a map3D class object. Note that you need a .fits file containing the map for this to happen.\n'
 	print(out)
+
 def status():
 	info()
 def help():
 	info()
-
-
-
