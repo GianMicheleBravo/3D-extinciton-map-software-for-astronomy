@@ -28,7 +28,7 @@ Note that the small map is also the one of with the _largest file size_. This is
 ## Setup
 Start by having the extinction3D.py file and an extinction map in the same directory as your code. If you use one of the pre-determined maps, the maps will will be loeaded automatically. You will also need a SkyCoord object containing the 3-Dimensional position of your object. Note that three values are required to place the star in 3-Dimensional space. Example of what would work here is right ascension, declination and distance.
 
-## Exectution
+## Execution
 From the astropy coordinates object coords, the formatting to get the extinciton is as follows:
 ## extinction( coords, 3Dmap, output='full', steps=100, observer=(0,0,0) )
 coords is a SkyCoord class object.
