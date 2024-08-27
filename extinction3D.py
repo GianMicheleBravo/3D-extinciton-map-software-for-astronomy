@@ -127,11 +127,11 @@ def extinctionSpectroscopic( A_V , lambd, unit='meters' , fluxOutput = False):
 	waveNumberBase=1/551e-9
 	
 	out = 1 / out
-	out =  out / waveNumberBase
-	
+	out = out / waveNumberBase
+	out = out * A_V
 	if fluxOutput:
 		return 10 ** (- out / 2.5 )
-	return out * A_V
+	return out
 	
 	
 ####LOADING MAPS AND CUSTOM FUNCTIONS####
