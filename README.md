@@ -41,7 +41,8 @@ steps=1000 is the number of integration steps
 
 observer=(0,0,0) is the coordinates of the observer from which photometry of a star was taken. For many currently available extinction maps and astrophysics research, the maps are centered at Earth, the same place where the telescopes are situated.
 
-To help simplify the project, the following streamlined functions have been defined:
+This function uses numerical integration over the map to get the extinction, and is as such computationally expensive. If desired, the following functions can be used instead to simplify the process:
+
 ## extinctionSmallMap( coords, output=full, steps=1000 )
 This function uses a 3kpc x 3kpc x 0.8 kpc extinction map and is centered at Earth, where it is assumed that the observer also is. This function is equal to **extinction(coords,smallMap)**.
 ## extinctionMediumMap( coords, output=full, steps=1000 )
@@ -50,6 +51,16 @@ This function uses a 6kpc x 6kpc x 0.8 kpc extinction map and is centered at Ear
 This function uses a 10kpc x 10kpc x 0.8 kpc extinction map and is centered at Earth, where it is assumed that the observer also is. This function is equal to **extinction(coords,largeMap)**.
 
 The advantages of the larger maps is that more stars are contained within them. The disadvantage is that precision is reduced and error is increased.
+
+To get values of extinction for spectroscopic observation, the following function can be used:
+## extinctionSpectroscopic( A_V , lambd, unit='meters' , fluxOutput = False ):
+A_V is the extinction in the V band, obtained i.e. by using the **extinction function.
+
+lambd is the wavelenght for which extinction is desired. Can be a single value or can be a list (or array) of wavelengths.
+
+unit = 'meter' is the unit in which the wavelength is given. Currently supported units are Ångström and nanometers. If no unit is given, it is assumed that the wavelength is given in meters.
+
+fluxOutput = False denotes wheter the output should be given in magnitudes of extinction, or, if set as True, in the factor of the light that reaches the observer. For example, a flux output of 0.3 means that 30% of the light from a star is not scattered by space dust and reaches the observer.
 
 ## info()
 Returns the current status of the script, showing which maps are loaded.
