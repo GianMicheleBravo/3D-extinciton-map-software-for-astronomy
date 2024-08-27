@@ -60,7 +60,7 @@ lambd is the wavelenght for which extinction is desired. Can be a single value o
 
 unit = 'meters' is the unit in which the wavelength is given. Currently supported units are Ångström and nanometers. If no unit is given, it is assumed that the wavelength is given in meters.
 
-fluxOutput = False denotes wheter the output should be given in magnitudes of extinction, or, if set as True, in the factor of the light that reaches the observer. For example, a flux output of 0.3 means that 30% of the light from a star is not scattered by space dust and reaches the observer.
+fluxOutput = False denotes wheter the output should be given in magnitudes of extinction, or, if set as True, in the fraction of the light that reaches the observer. For example, a flux output of 0.3 means that 30% of the light from a star is not scattered by space dust and reaches the observer.
 
 ## info()
 Returns the current status of the script, showing which maps are loaded.
