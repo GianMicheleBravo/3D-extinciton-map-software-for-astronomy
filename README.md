@@ -15,7 +15,7 @@ The maps are in the unit of magnitudes/parsec. To get the extinciton of a star, 
 Go to 
 https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=J/A%2bA/664/A174/list
 Submit the query.
-Dowload your desired map(s). If you wish, you can rename them accordingly as following to make it easier to understand what they are.
+Dowload your desired map(s). If you wish, you can rename them as following to make it easier to understand what they are.
 
 **smallMap.fits**: the file called explore_cube_density_values_010pc_v2.fits
 
