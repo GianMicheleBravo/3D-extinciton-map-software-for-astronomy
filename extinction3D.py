@@ -117,21 +117,24 @@ def extinction( coords, map3D, output='full', steps=1000, observer=np.array((0,0
 		return out[output]
 
 #from the extinction in the V band, returns the extinction for given wavelength
-def extinctionSpectroscopic( A_V , lambd, unit='meters' , fluxOutput = False):
+def extinctionSpectroscopic( A_V , lambd , output = 'full' , unit='meters' ):
 	out=np.array(lambd)
 	if unit in ['Å','A','Ångström','Angstrom','angstrom']:
 		out = out * 1e-10
 	elif unit in ['nm','nanometers','nanometer']:
 		out = out * 1e-9	
 	
-	waveNumberBase=1/551e-9
+	waveNumberBase=1/551e-9 #the wave number of light in the V band
 	
 	out = 1 / out
 	out = out / waveNumberBase
 	out = out * A_V
-	if fluxOutput:
-		return 10 ** (- out / 2.5 )
-	return out
+	flux = 10 ** (- out / 2.5 )
+	out = { 'mag':out , 'flux':flux }
+	if output=='full':
+		return out
+	else:
+		return out[output]
 	
 	
 ####LOADING MAPS AND CUSTOM FUNCTIONS####
