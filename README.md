@@ -58,7 +58,7 @@ A_V is the extinction in the V band, obtained i.e. by using the **extinction fun
 
 lambd is the wavelenght for which extinction is desired. Can be a single value or can be a list (or array) of wavelengths.
 
-output = 'full' denotes what output is given. Letting output = 'full' will give both in magnitude ('mag') and ('flux') as a python dictonary. Letting output = 'mag' will give how many magnitudes of extiction light has for a given wavelength. Letting output = 'flux' will give the factor of the light that will reach the observer through the dust (as an example, a factor of 0.3 means that 30% of the light from the star reaches the telescope through the dust).
+output = 'full' denotes what output is given. Letting output = 'full' will give both in magnitude ('mag') and ('flux') as a python dictonary. Letting output = 'mag' will give how many magnitudes of extiction light has for a given wavelength. Letting output = 'flux' will give the factor of the light that will reach the observer through the dust (as an example, a factor of 0.3 means that 30% of the light from a given object reaches the telescope through the dust).
 
 unit = 'meters' is the unit in which the wavelength is given. Currently supported units are Ångström and nanometers. If no unit is given, it is assumed that the wavelength is given in meters.
 
