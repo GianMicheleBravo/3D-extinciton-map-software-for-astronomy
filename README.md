@@ -53,14 +53,14 @@ This function uses a 10kpc x 10kpc x 0.8 kpc extinction map and is centered at E
 The advantages of the larger maps is that more stars are contained within them. The disadvantage is that precision is reduced and error is increased.
 
 To get values of extinction for spectroscopic observation, the following function can be used:
-## extinctionSpectroscopic( A_V, lambd, unit='meters', fluxOutput = False ):
+## extinctionSpectroscopic( A_V , lambd , output = 'full' , unit='meters' )
 A_V is the extinction in the V band, obtained i.e. by using the **extinction function.
 
 lambd is the wavelenght for which extinction is desired. Can be a single value or can be a list (or array) of wavelengths.
 
-unit = 'meters' is the unit in which the wavelength is given. Currently supported units are Ångström and nanometers. If no unit is given, it is assumed that the wavelength is given in meters.
+output = 'full' denotes what output is given. Letting output = 'full' will give both in magnitude ('mag') and ('flux') as a python dictonary. Letting output = 'mag' will give how many magnitudes of extiction light has for a given wavelength. Letting output = 'flux' will give the factor of the light that will reach the observer through the dust (as an example, a factor of 0.3 means that 30% of the light from the star reaches the telescope through the dust).
 
-fluxOutput = False denotes wheter the output should be given in magnitudes of extinction, or, if set as True, in the fraction of the light that reaches the observer. For example, a flux output of 0.3 means that 30% of the light from a star is not scattered by space dust and reaches the observer.
+unit = 'meters' is the unit in which the wavelength is given. Currently supported units are Ångström and nanometers. If no unit is given, it is assumed that the wavelength is given in meters.
 
 ## info()
 Returns the current status of the script, showing which maps are loaded.
